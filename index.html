@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Juego del Ahorcado</h1>
+        
+        <div class="game-container">
+            <div class="hangman-box">
+                <svg class="hangman-draw" viewBox="0 0 200 200">
+                    <!-- Base -->
+                    <line class="draw-line" x1="20" y1="180" x2="180" y2="180"/>
+                    <!-- Poste vertical -->
+                    <line class="draw-line" x1="40" y1="180" x2="40" y2="20"/>
+                    <!-- Poste horizontal -->
+                    <line class="draw-line" x1="40" y1="20" x2="120" y2="20"/>
+                    <!-- Cuerda -->
+                    <line class="draw-line" x1="120" y1="20" x2="120" y2="40"/>
+                    <!-- Cabeza -->
+                    <circle class="hangman-part" cx="120" cy="55" r="15" style="display: none;"/>
+                    <!-- Cuerpo -->
+                    <line class="hangman-part" x1="120" y1="70" x2="120" y2="120" style="display: none;"/>
+                    <!-- Brazo izquierdo -->
+                    <line class="hangman-part" x1="120" y1="80" x2="90" y2="100" style="display: none;"/>
+                    <!-- Brazo derecho -->
+                    <line class="hangman-part" x1="120" y1="80" x2="150" y2="100" style="display: none;"/>
+                    <!-- Pierna izquierda -->
+                    <line class="hangman-part" x1="120" y1="120" x2="90" y2="150" style="display: none;"/>
+                    <!-- Pierna derecha -->
+                    <line class="hangman-part" x1="120" y1="120" x2="150" y2="150" style="display: none;"/>
+                </svg>
+            </div>
+
+            <div class="game-info">
+                <div class="word-display"></div>
+                <div class="hint-text">
+                    Pista: <span></span>
+                </div>
+                <div class="guesses-text">
+                    Intentos restantes: <span>6</span>
+                </div>
+                <div class="score-text">
+                    Puntuación: <span>0</span>
+                </div>
+            </div>
+
+            <div class="keyboard"></div>
+
+            <div class="game-buttons">
+                <button class="new-game-btn">Nuevo Juego</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de fin de juego -->
+    <div class="modal" id="gameOverModal">
+        <div class="modal-content">
+            <h2 class="result-text"></h2>
+            <p class="correct-word"></p>
+            <button class="play-again-btn">Jugar de nuevo</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
